@@ -1,6 +1,6 @@
 # LLMs
 Performing various tasks using LLMs.
 
-These tasks include: translation, condensing sentences, 
+These tasks include: translation, condensing sentences, text to speech, image segmentation, etc.
 
-Summarizing is a main area of interest for me, since the LLMs that I constantly use, are quite verbose.
+Summarizing is one of my main areas of interest, as the LLMs I frequently use tend to be quite verbose."
