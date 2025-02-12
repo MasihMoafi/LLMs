@@ -47,26 +47,26 @@ python main.py
 The script processes predefined queries using the RAG system and generates answers based on documents and/or live web data.
 ```
 
-# Steps Performed:
+Steps Performed:
 Document Processing: The documents are chunked into smaller segments for efficient retrieval.
 Index Creation or Loading: An FAISS index or Chroma-based vector store is created or loaded for similarity search.
 Query Answering: A set of queries is processed, and answers are generated using LLMs, based on the retrieved document chunks or web content.
 Results are saved in an output file (response.txt or agent_results.txt).
 
 ## Components
-RAG System
+### RAG System
 The RAG system includes:
 
 Document Chunking: Splitting large documents into smaller chunks to improve retrieval performance.
 Index Creation: Using FAISS (or Chroma) for indexing the document chunks based on their embeddings.
 Similarity Search: Utilizing cosine similarity for retrieving relevant chunks during query processing.
-Answer Generator
+### Answer Generator
 The Answer Generator class interacts with the RAG system to fetch the most relevant document chunks based on a given question. It then uses the LLM to generate a context-aware response.
 
-Web Browsing Agent
+### Web Browsing Agent
 The Web Browsing Agent fetches real-time information from the web by scraping web pages. The agent can be used to get live data on current events, statistics, and more.
 
-Chroma-based RAG
+### Chroma-based RAG
 An alternative RAG implementation using Chroma for storing and querying document embeddings is also included. This utilizes LangChain's Chroma integration for efficient vector store management and querying.
 
 ## Results
