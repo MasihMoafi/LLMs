@@ -73,9 +73,6 @@ An alternative RAG implementation using Chroma for storing and querying document
 The system successfully processes predefined questions and generates responses based on the relevant document context. Additionally, the web-browsing agent retrieves live data for real-time questions, providing a comprehensive, multi-source approach to answering queries.
 
 Example output:
-
-makefile
-Copy
 سوال 1 (1):
 چرا اینترنت همراه اول گوشی وصل نمیشود؟
 
