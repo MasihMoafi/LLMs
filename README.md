@@ -1,10 +1,3 @@
-# LLMs
-Performing various tasks using LLMs.
-
-These tasks include: RAG using two different methods, Email generation, summarization, text to speech, image segmentation, etc.
-
-Summarizing is one of my main areas of interest, as the LLMs I frequently use tend to be overly verbose.
-
 README for Test Dorna
 Overview
 This repository contains an implementation of a Question-Answering (QA) system leveraging Retrieval-Augmented Generation (RAG) and other advanced techniques like Chroma and LangChain. The system uses a combination of pre-trained models and custom indexing to retrieve context from a set of documents and generate context-aware answers to questions. It also includes a web-browsing agent to fetch real-time information from the web.
