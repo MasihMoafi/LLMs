@@ -1,82 +1,76 @@
-README for Test Dorna
-Overview
-This repository contains an implementation of a Question-Answering (QA) system leveraging Retrieval-Augmented Generation (RAG) and other advanced techniques like Chroma and LangChain. The system uses a combination of pre-trained models and custom indexing to retrieve context from a set of documents and generate context-aware answers to questions. It also includes a web-browsing agent to fetch real-time information from the web.
+# Deploying Agentic RAG Systems to Perform Various Tasks Using LLMs
 
-Key Features
-RAG-based Search: Use FAISS or Chroma to index and retrieve document chunks based on cosine similarity.
-Answer Generation: Combines document retrieval with large language models (LLM) like llama3.2 to generate coherent answers.
-Web Browsing Tool: An agent that can scrape the web for up-to-date information.
-Multilingual: Supports multi-language queries (e.g., Persian).
-Installation
-Prerequisites
-Ensure you have the following libraries installed:
+This repository showcases the implementation of a Retrieval-Augmented Generation (RAG) system for answering questions using large language models (LLMs) and document retrieval. The system integrates document indexing, chunking, and similarity search with advanced language models like `llama3.2` to provide context-aware responses. Additionally, it incorporates a web-browsing agent for retrieving live data.
 
-bash
-Copy
-pip install faiss-cpu sentence-transformers ollama numpy
-pip install langchain chromadb sentence-transformers ollama
-pip install -U langchain-community
-Libraries
-faiss-cpu: Used for efficient similarity search and clustering.
-sentence-transformers: To embed documents and queries for similarity search.
-ollama: A Python package for interacting with Ollama models.
-langchain: For chaining multiple LLMs and tools in complex workflows.
-chromadb: A vector store used for Chroma-based RAG.
-numpy: For array manipulation.
+## Table of Contents
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+  - [RAG System](#rag-system)
+  - [Answer Generator](#answer-generator)
+  - [Web Browsing Agent](#web-browsing-agent)
+  - [Chroma-based RAG](#chroma-based-rag)
+- [Results](#results)
+- [License](#license)
+
+## Overview
+The project is designed to perform tasks like document-based question answering, real-time information retrieval via web scraping, and context-aware response generation. It leverages multiple techniques:
+- **RAG (Retrieval-Augmented Generation)**: Uses document indexing and retrieval for question answering.
+- **Web Browsing**: Fetches live data to answer real-time queries.
+- **Chroma and FAISS**: Index and retrieve relevant document chunks efficiently.
+
+The system is multilingual and supports Persian language queries.
+
+## Installation
+
+To set up the environment, clone the repository and install the required dependencies:
+
+```
+git clone https://github.com/yourusername/agentic-rag-system.git
+cd agentic-rag-system
+pip install -r requirements.txt
+The requirements.txt includes dependencies such as:
+
+faiss-cpu: For efficient similarity search.
+sentence-transformers: For embedding models.
+ollama: For LLM interactions.
+langchain: For chaining models and agents.
+chromadb: For Chroma-based document retrieval.
+Install the additional dependencies for web browsing:
+
+pip install requests beautifulsoup4
 Usage
-Initialization
-RAG System: The RAG system creates an index or loads an existing one. The system works with multiple document sources (defined in DOCUMENT_PATHS) and splits them into chunks for efficient retrieval.
-Answer Generator: Uses the RAG system to fetch relevant document chunks based on the question and generates a response using the LLM.
-Web Browsing Tool: Fetches real-time information from the web using a specific URL.
-Example Flow
-Document Processing:
+Run the following command to execute the main script:
 
-Chunks are created from documents (e.g., .txt files).
-The system creates or loads an index to facilitate similarity-based search.
-Query Execution:
-
-A list of predefined questions is processed.
-For each query, the system searches for relevant context and generates a response using the LLM.
-Running the Main Script
-To run the script, execute the following:
-
-bash
-Copy
 python main.py
-This will process a set of predefined queries, generate responses using the RAG system, and save the results to a file (e.g., response.txt).
+The script processes predefined queries using the RAG system and generates answers based on documents and/or live web data.
+```
 
-Agent with Web Browsing
-The system can use a web browsing agent to fetch live web data. The agent uses the requests and BeautifulSoup libraries to scrape web pages and return content up to 5000 characters.
+# Steps Performed:
+Document Processing: The documents are chunked into smaller segments for efficient retrieval.
+Index Creation or Loading: An FAISS index or Chroma-based vector store is created or loaded for similarity search.
+Query Answering: A set of queries is processed, and answers are generated using LLMs, based on the retrieved document chunks or web content.
+Results are saved in an output file (response.txt or agent_results.txt).
 
-Example of using the Agent:
-python
-Copy
-from langchain.agents import Tool, initialize_agent, AgentType
+## Components
+RAG System
+The RAG system includes:
 
-# Define tools
-tools = [
-    Tool(
-        name="Document_Search",
-        func=document_search_function,  # Function for document search
-        description="For questions about documents"
-    ),
-    Tool(
-        name="Web_Browser",
-        func=web_browser_tool,  # Web browsing function
-        description="For fetching live web data"
-    )
-]
+Document Chunking: Splitting large documents into smaller chunks to improve retrieval performance.
+Index Creation: Using FAISS (or Chroma) for indexing the document chunks based on their embeddings.
+Similarity Search: Utilizing cosine similarity for retrieving relevant chunks during query processing.
+Answer Generator
+The Answer Generator class interacts with the RAG system to fetch the most relevant document chunks based on a given question. It then uses the LLM to generate a context-aware response.
 
-# Initialize agent
-agent = initialize_agent(
-    tools=tools,
-    llm=llama_model,  # Use your pre-trained LLM here
-    agent_type=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION,
-    memory=memory_buffer,  # Optional: To use conversation memory
-    verbose=True
-)
-Results
-Queries will be processed sequentially, and the results will be saved to the specified output file.
+Web Browsing Agent
+The Web Browsing Agent fetches real-time information from the web by scraping web pages. The agent can be used to get live data on current events, statistics, and more.
+
+Chroma-based RAG
+An alternative RAG implementation using Chroma for storing and querying document embeddings is also included. This utilizes LangChain's Chroma integration for efficient vector store management and querying.
+
+## Results
+The system successfully processes predefined questions and generates responses based on the relevant document context. Additionally, the web-browsing agent retrieves live data for real-time questions, providing a comprehensive, multi-source approach to answering queries.
 
 Example output:
 
@@ -86,13 +80,8 @@ Copy
 چرا اینترنت همراه اول گوشی وصل نمیشود؟
 
 پاسخ:
-برای حل این مشکل، اول باید اطمینان حاصل کنید که شبکه موبایل شما به درستی فعال است...
-Customization
-Document Paths: Modify the DOCUMENT_PATHS list to point to your own documents.
-Embedding Models: You can change the EMBEDDING_MODEL and LLM_MODEL to other pre-trained models.
-Chunking Parameters: Modify CHUNK_SIZE and OVERLAP to control the document chunking behavior.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+برای حل این مشکل، ابتدا باید بررسی کنید که شبکه موبایل شما در دسترس است و ...
+The system demonstrates effective integration of multiple techniques to solve complex QA tasks.
 
-Acknowledgements
-This project leverages LangChain, Ollama, FAISS, and Chroma for building efficient and scalable RAG systems.
+## License
+This project is licensed under the MIT License.
