@@ -1,3 +1,7 @@
+# My website's chatbot
+
+https://github.com/user-attachments/assets/5401931c-fb7e-445d-a913-1350951da5b0
+
 # Deploying Agentic RAG Systems to Perform Various Tasks Using LLMs
 
 This repository showcases the implementation of a Retrieval-Augmented Generation (RAG) system for answering questions using large language models (LLMs) and document retrieval. The system integrates document indexing, chunking, and similarity search with advanced language models like `llama3.2` to provide context-aware responses. Additionally, it incorporates a web-browsing agent for retrieving live data.
