@@ -1,6 +1,6 @@
 # My website's chatbot
 
-https://github.com/user-attachments/assets/5401931c-fb7e-445d-a913-1350951da5b0
+https://github.com/user-attachments/assets/04627f5d-3538-4ac1-89ba-f2ef942b4ed9
 
 # Deploying Agentic RAG Systems to Perform Various Tasks Using LLMs
 
