@@ -26,29 +26,6 @@ The system is multilingual and supports Persian language queries.
 
 ## Installation
 
-To set up the environment, clone the repository and install the required dependencies:
-
-```
-git clone https://github.com/yourusername/agentic-rag-system.git
-cd agentic-rag-system
-pip install -r requirements.txt
-The requirements.txt includes dependencies such as:
-
-faiss-cpu: For efficient similarity search.
-sentence-transformers: For embedding models.
-ollama: For LLM interactions.
-langchain: For chaining models and agents.
-chromadb: For Chroma-based document retrieval.
-Install the additional dependencies for web browsing:
-
-pip install requests beautifulsoup4
-Usage
-Run the following command to execute the main script:
-
-python main.py
-The script processes predefined queries using the RAG system and generates answers based on documents and/or live web data.
-```
-
 Steps Performed:
 Document Processing: The documents are chunked into smaller segments for efficient retrieval.
 Index Creation or Loading: An FAISS index or Chroma-based vector store is created or loaded for similarity search.
@@ -65,11 +42,19 @@ Similarity Search: Utilizing cosine similarity for retrieving relevant chunks du
 ### Answer Generator
 The Answer Generator class interacts with the RAG system to fetch the most relevant document chunks based on a given question. It then uses the LLM to generate a context-aware response.
 
+### Chroma-based RAG
+
+An alternative RAG implementation using Chroma for storing and querying document embeddings is also included. This utilizes LangChain's Chroma integration for efficient vector store management and querying.
+
 ### Web Browsing Agent
 The Web Browsing Agent fetches real-time information from the web by scraping web pages. The agent can be used to get live data on current events, statistics, and more.
 
-### Chroma-based RAG
-An alternative RAG implementation using Chroma for storing and querying document embeddings is also included. This utilizes LangChain's Chroma integration for efficient vector store management and querying.
+### Doc Search Agent
+
+### Deep Search Agent
+
+### The Power of Agentic Search
+
 
 ## Results
 The system successfully processes predefined questions and generates responses based on the relevant document context. Additionally, the web-browsing agent retrieves live data for real-time questions, providing a comprehensive, multi-source approach to answering queries.
