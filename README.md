@@ -1,10 +1,8 @@
-# My website's chatbot
-
 https://github.com/user-attachments/assets/04627f5d-3538-4ac1-89ba-f2ef942b4ed9
 
 # Deploying Agentic RAG Systems to Perform Various Tasks Using LLMs
 
-This repository showcases the implementation of a Retrieval-Augmented Generation (RAG) system for answering questions using large language models (LLMs) and document retrieval. The system integrates document indexing, chunking, and similarity search with advanced language models like `llama3.2` to provide context-aware responses. Additionally, it incorporates a web-browsing agent for retrieving live data.
+This repository showcases the implementation of a Retrieval-Augmented Generation (RAG) system for answering questions using large language models (LLMs) and document retrieval. The system integrates document indexing, chunking, and similarity search with advanced language models like `gemma2:9b` to provide context-aware responses. Additionally, it incorporates a web-browsing agent for retrieving live data.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -76,12 +74,14 @@ An alternative RAG implementation using Chroma for storing and querying document
 ## Results
 The system successfully processes predefined questions and generates responses based on the relevant document context. Additionally, the web-browsing agent retrieves live data for real-time questions, providing a comprehensive, multi-source approach to answering queries.
 
-Example output:
+Example:
+```
 سوال 1 (1):
-چرا اینترنت همراه اول گوشی وصل نمیشود؟
+شاه عباس صفوی کیست؟
 
 پاسخ:
-برای حل این مشکل، ابتدا باید بررسی کنید که شبکه موبایل شما در دسترس است و ...
+
+
 The system demonstrates effective integration of multiple techniques to solve complex QA tasks.
 
 ## License
