@@ -43,7 +43,7 @@ Similarity Search: Utilizing cosine similarity for retrieving relevant chunks du
 
 An alternative RAG implementation using Chroma for storing and querying document embeddings is also included. This utilizes LangChain's Chroma integration for efficient vector store management and querying.
 
-### The Power of Agentic Search
+## The Power of Agentic Search
 
 ### Web Browsing Tool
 The Web Browsing Agent fetches real-time information from the web by scraping web pages. The agent can be used to get live data on current events, statistics, and more.
