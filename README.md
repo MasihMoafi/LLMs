@@ -64,4 +64,4 @@ Example:
 The system demonstrates effective integration of multiple techniques to solve complex QA tasks.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the manually crafted license @LICENSE; which basically prohibits the use without the knowledge of the author, Masih Moafi. 
