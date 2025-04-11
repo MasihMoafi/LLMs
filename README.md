@@ -59,7 +59,7 @@ The system successfully processes predefined questions and generates responses b
 
 Example:
 
-![Screenshot from 2025-02-24 11-19-27](https://github.com/user-attachments/assets/a44540d0-2f62-40ae-83fb-8b07ee8186b9)
+
 
 The system demonstrates effective integration of multiple techniques to solve complex QA tasks.
 
